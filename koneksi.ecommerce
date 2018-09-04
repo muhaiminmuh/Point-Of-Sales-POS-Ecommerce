@@ -1,0 +1,5 @@
+[client]
+database  = djangopenjualan
+user = root
+password =
+default-character-set = utf8

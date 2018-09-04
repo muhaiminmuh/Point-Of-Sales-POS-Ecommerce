@@ -1,0 +1,329 @@
+{% extends "layout/template.html" %}
+{% block isine %}
+
+<style type="text/css">
+#slidercontainer {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  margin-left: 400px;
+  margin-top: 35px;
+ }
+
+ #slidercontainer {
+  width: 750px;
+  height: 340px;
+  border: 4px solid white;
+ }
+
+ #css3slider img {
+  width: 768px;
+  height: 341px;
+  float: left;
+ }
+
+ #css3slider {
+  position: absolute;
+  width:3900px;
+  -webkit-animation-name:slider;
+  -webkit-animation-duration:8s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count:infinite;
+  -moz-animation-name:slider;
+  -moz-animation-duration:8s;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count:infinite;
+  -o-animation-name:slider;
+  -o-animation-duration:8s;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count:infinite;
+  animation-name:slider;
+  animation-duration:8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes slider {
+  0% { left: 0; opacity: 0; }
+  2% { opacity: 1; }
+  20% { left: 0; opacity: 1; }
+  21% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { left: -768px; opacity: 1; }
+  45% { left: -768px; opacity: 1; }
+  46% { opacity: 0; }
+  48% { opacity: 0; }
+  50% { left: -1536px; opacity: 1; }
+  70% { left: -1536px; opacity: 1; }
+  72% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { left: -2304px; opacity: 1; }
+  95% { left: -2304px; opacity: 1; }
+  97%  { left: -2304px; opacity: 0;}
+  100% { left: 0; opacity: 0; }
+}
+
+@-moz-keyframes slider {
+  0% { left: 0; opacity: 0; }
+  2% { opacity: 1; }
+  20% { left: 0; opacity: 1; }
+  21% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { left: -768px; opacity: 1; }
+  45% { left: -768px; opacity: 1; }
+  46% { opacity: 0; }
+  48% { opacity: 0; }
+  50% { left: -1536px; opacity: 1; }
+  70% { left: -1536px; opacity: 1; }
+  72% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { left: -2304px; opacity: 1; }
+  95% { left: -2304px; opacity: 1; }
+  97%  { left: -2304px; opacity: 0;}
+  100% { left: 0; opacity: 0; }
+}
+
+@-o-keyframes slider {
+  0% { left: 0; opacity: 0; }
+  2% { opacity: 1; }
+  20% { left: 0; opacity: 1; }
+  21% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { left: -768px; opacity: 1; }
+  45% { left: -768px; opacity: 1; }
+  46% { opacity: 0; }
+  48% { opacity: 0; }
+  50% { left: -1536px; opacity: 1; }
+  70% { left: -1536px; opacity: 1; }
+  72% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { left: -2304px; opacity: 1; }
+  95% { left: -2304px; opacity: 1; }
+  97%  { left: -2304px; opacity: 0; }
+  100% { left: 0; opacity: 0; }
+}
+
+@keyframes slider {
+  0% { left: 0; opacity: 0; }
+  2% { opacity: 1; }
+  20% { left: 0; opacity: 1; }
+  21% { opacity: 0; }
+  24% { opacity: 0; }
+  25% { left: -768px; opacity: 1; }
+  45% { left: -768px; opacity: 1; }
+  46% { opacity: 0; }
+  48% { opacity: 0; }
+  50% { left: -1536px; opacity: 1; }
+  70% { left: -1536px; opacity: 1; }
+  72% { opacity: 0; }
+  74% { opacity: 0; }
+  75% { left: -2304px; opacity: 1; }
+  95% { left: -2304px; opacity: 1; }
+  97%  { left: -2304px; opacity: 0; }
+  100% { left: 0; opacity: 0; }
+}
+
+#css3slider:hover {
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused;
+  animation-play-state:paused; }
+}
+
+#css3slider img {
+  float: right;
+}
+
+#slidercontainer:after {
+  content: "❚❚";
+  font-size: 150px;
+  position: absolute;
+  z-index: 12;
+  color: rgba(255,255,255, 0);
+  left: 300px; top: 80px;
+  -webkit-transition: 1s all ease-in-out;
+  -ms-transition: 1s all ease-in-out;
+  -moz-transition: 1s all ease-in-out;
+  -o-transition: 1s all ease-in-out;
+  transition: 1s all ease-in-out;
+}
+
+#slidercontainer:hover:after {
+  color: rgba(255,255,255, 0.6);
+}
+
+#abdesc {
+	float: left;
+	width: 700px;
+	margin: 25px;
+	margin-left: 10%;
+	color: white;
+	font-family: calibri;
+	text-align: justify;
+}
+
+#about {
+	float: left;
+	margin: 30px;
+	margin-right: -8px;
+	background-color: black;
+	opacity: 0.7;
+	width: 340px;
+	margin-top: 50px;
+	margin-right: 30px;
+	margin-left: 5%;
+	height: auto;
+	padding: 20px;
+	color: white;
+	font-style: bold;
+	font-family: calibri;
+  box-shadow: 0px 0px 12px 8px #000000;
+}
+#about2 {
+	float: left;
+	margin: 10px;
+	margin-right: -8px;
+	background-color: black;
+	opacity: 0.7;
+	width: 340px;
+	margin-left: 5%;
+	margin-right: 30px;
+	margin-bottom: 50px;
+	height: 260px;
+	padding: 20px;
+	font-style: bold;
+	color: white;
+	font-family: calibri;
+  box-shadow: 0px 0px 12px 8px #000000;
+}
+
+input#tabout[type=text] {
+	padding: 12px 45px;
+	background-color: rgb(55,55,55);
+	opacity: 0.8;
+	width: 320px;
+	color: white;
+	margin: 8px 0;
+	box-sizing: border-box;
+  border: 4px solid lawngreen;
+	/* border: 4px solid #f4511e; */
+	transition: 0.5s ease;
+-o-transition: 0.5s ease;
+-moz-transition: 0.5s ease;
+-webkit-transition: 0.5s ease;
+	outline: none;
+}
+input[type=text], textarea {
+	padding: 12px 20px;
+	background-color: rgb(55,55,55);
+	opacity: 0.8;
+	color: white;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	transition: 0.5s ease;
+-o-transition: 0.5s ease;
+-moz-transition: 0.5s ease;
+-webkit-transition: 0.5s ease;
+	outline: none;
+}
+input[type=text]:focus, textarea:focus {
+	border: 3px solid lawngreen;
+}
+.button {
+	display: inline-block;
+	border-radius: 4px;
+  background-color: lawngreen;
+	/* background-color: #f4511e; */
+	border: none;
+	color: #000000;
+	text-align: center;
+	font-size: 20px;
+	padding: 10px;
+	height: 50px;
+	width: 150px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.button span:after {
+	content: '»';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+.button:hover:not(.active) {
+    background-color: #f4511e;
+    color: black;
+    font-style: bold;
+}
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+
+</style>
+	<h2 align="center"> SELAMAT DATANG</h2>
+	<h3 align="center"> LAPTOP AND ASSESSORIS SHOP</h3>
+	<br/>
+	<div id=slidercontainer>
+  		<div id=css3slider>
+			<img src="../static/gambar/razer-gamestore-home-desktop.jpg" width="1000px">
+			<img src="../static/gambar/Dreamhack_Generic_Banner_w700_h247.jpg" width="1000px">
+			<img src="../static/gambar/MSIBanner.jpg" width="1000px">
+			<img src="../static/gambar/ChromaFamilyBanner.jpg" width="1000px">
+			<img src="../static/gambar/coreV2-gallery-3.jpg" width="1000px">
+			<img src="../static/gambar/steelseries_facebook_cover_photo_2_by_velsonic-d4s9y5y.jpg" width="1000px">
+			<img src="../static/gambar/SiberiaV3Prismreview5.jpg" width="1000px">
+		</div>
+	</div>
+	<br/>
+
+	<div id="abdesc">
+		<p><h2><b>Mengapa LOOM LAPTOP SHOP ?</b></h2></p>
+		<p><b>LOOM LAPTOP SHOP</b> merupakan situs belanja online di Indonesia yang menyediakan produk IT high-end. Menjual laptop dan PC gaming, komponen desktop, periperal dan aksesoris dari brand ternama seperti Xenom, Gigabyte, MSI, Dell, Alienware, Asus, ROG, Acer, HP, Razer, Steelseries, Logitech, dan Cooler Master. Kami juga melayani service notebook PC, bisa di antar dan diambil daerah Jakarta, Jogya</p>
+		<p><h2><b>Apa Tujuan Kami ?</b></h2></p>
+		<p>Untuk melayani penggemar game, desainer grafis / CAD, arsitek, dan penggila gadget dengan memberikan solusi produk terbaik dan layanan premium untuk kebutuhan komputasi high-end.
+
+		Tidak seperti layanan toko tradisional pada umumnya yang hanya sebatas pada menjual saja, fokus utama <b>LOOM LAPTOP SHOP</b> adalah memberikan pelanggan kami fasilitas layanan konsultasi secara istimewa, layanan pra-dan-purna jual yang solid, dan tentu saja harga yang kompetitif.
+
+		Kami selalu merekomendasikan produk berkualitas tinggi dengan inovasi teknologi terbaru dari Amerika, Eropa, Taiwan, dan Jepang. Layanan utama kami tidak terbatas pada konsultasi dan penjualan saja, tetapi juga mencakup kustomisasi notebook, in-house technical support, dan penyediaan spare parts notebook. Dengan dukungan teknisi berpengalaman dan jaringan mitra distributor notebook PC terkenal, diantaranya Asus, HP, Dell, Toshiba, Alienware, Clevo / Sager, dan MSI, tentunya membuat kami mendapat akses penyediaan spare parts yang menjamin dukungan after sales kami untuk produk yang kami pasarkan.</p>
+		<p><h2><b>Visi & Misi Perusahaan</b></h2></p>
+		<p>Selalu menjadi spesialis notebook gaming dan hi-end Terdepan dan Terbaik di skala nasional. Dan melayani pelanggan kami sepenuh hati dengan menyediakan solusi dan pelayanan terbaik berdasarkan kebutuhan dari pelanggan.</p>
+		<p><h2><b>Motto Perusahaan</b></h2></p>
+		<p>"SETIAP SENYUMAN DARI KEPUASAN PELANGGAN TERHADAP LAYANAN KAMI ADALAH UKURAN  KESUKSESAN KAMI"</p>
+	</div>
+
+	<div id="about">
+		<h2>About Us</h2><br/>
+		<b>LOCATION<br/>
+		<input id="tabout" type="text" name="loc" value="Blimbing, Wonorejo, Polokarto" readonly /><br/>
+		EMAIL<br/>
+		<input id="tabout" type="text" name="email" value="lomo.wedang.lw@gmail.com" readonly /><br/>
+		PHONE NUMBER<br/>
+		<input id="tabout" type="text" name="no" value="+625725308116" readonly />
+		<br/>
+		<br/>
+		<button class="button" style="vertical-align:middle"><span>Call Us</span></button></b>
+	</div>
+	<div id="about2">
+		<h2>Subscribe Us</h2><br/>
+		<b>YOUR EMAIL<br/>
+		<input id="tabout" type="text" name="loc" /><br/>
+		<br/>
+		<button class="button" style="vertical-align:middle"><span>Subscribe</span></button></b>
+	</div>
+{% endblock %}

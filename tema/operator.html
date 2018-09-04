@@ -1,0 +1,52 @@
+{% extends "layout/template.html" %}
+{% block isine %}
+
+<style type="text/css">
+	table {
+		margin-top: 30px;
+	}
+	table#t00, th#t00, td#t00 {
+			border: 5px solid white;
+			border-collapse: collapse; /*mebuat tabel jadi sambung*/
+	}
+	table#t00 th {
+			background-color: teal;
+			color: white;
+	}
+	table#t00 tr:nth-child(even) { /*membuat warna baris genap*/
+			background-color: #2F4F4F;
+	}
+	.des{
+		text-align: center;
+		font-family: calibri;
+		font-size: 24px;
+		padding-top: 20px;
+		color: lawngreen;
+	}
+</style>
+
+<div class="des">
+	DATA OPERATOR
+</div>
+
+	<table id="t00" border="1" cellpadding="3" cellspacing="0" align="center">
+		<tr>
+			<th>ID OPERATOR</th>
+			<th>NAMA</th>
+			<th>ALAMAT</th>
+			<th>JENIS KELAMIN</th>
+			<th>NO TELEPON</th>
+			<th>EMAIL</th>
+		</tr>
+		{% for brg in data %}
+		<tr>
+			<td>{{ brg.id_operator }}</td>
+			<td>{{ brg.nama }}</td>
+			<td>{{ brg.alamat }}</td>
+			<td>{{ brg.jenis_kelamin }}</td>
+			<td>{{ brg.no_telepon }}</td>
+			<td>{{ brg.email }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

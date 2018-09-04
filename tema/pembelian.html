@@ -1,0 +1,52 @@
+{% extends "layout/template.html" %}
+{% block isine %}
+
+<style type="text/css">
+	table {
+		margin-top: 30px;
+	}
+	table#t00, th#t00, td#t00 {
+			border: 5px solid white;
+			border-collapse: collapse; /*mebuat tabel jadi sambung*/
+	}
+	table#t00 th {
+			background-color: teal;
+			color: white;
+	}
+	table#t00 tr:nth-child(even) { /*membuat warna baris genap*/
+			background-color: #2F4F4F;
+	}
+	.des{
+		text-align: center;
+		font-family: calibri;
+		font-size: 24px;
+		padding-top: 20px;
+		color: lawngreen;
+	}
+</style>
+
+<div class="des">
+	DATA PENJUALAN
+</div>
+
+	<table id="t00" border="2" cellpadding="3" cellspacing="0" align="center">
+  		<tr>
+  			<th>SUPPLIER</th>
+  			<th>KATEGORI</th>
+  			<th>BRAND</th>
+  			<th>BARANG</th>
+  			<th>JUMLAH</th>
+  			<th>TANGGAL</th>
+  		</tr>
+  		{% for brg in data %}
+  		<tr>
+  			<td>{{ brg.supplier }}</td>
+  			<td>{{ brg.kategori }}</td>
+  			<td>{{ brg.brand }}</td>
+  			<td>{{ brg.barang }}</td>
+  			<td>{{ brg.jumlah }}</td>
+  			<td>{{ brg.tanggal }}</td>
+  		</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

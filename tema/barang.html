@@ -1,0 +1,116 @@
+{% extends "layout/template.html" %}
+{% block isine %}
+
+<style type="text/css">
+	table {
+		margin-top: 30px;
+	}
+	table#t00, th#t00, td#t00 {
+			border: 5px solid white;
+			border-collapse: collapse; /*mebuat tabel jadi sambung*/
+	}
+	table#t00 th {
+			background-color: teal;
+			color: white;
+	}
+	table#t00 tr:nth-child(even) { /*membuat warna baris genap*/
+			background-color: #2F4F4F;
+	}
+	.des{
+		text-align: center;
+		font-family: calibri;
+		font-size: 24px;
+		padding-top: 20px;
+		color: lawngreen;
+	}
+	div.img {
+	margin: 10px;
+    border: 3px solid #ccc;
+    color: black;
+    padding: 5px;
+    padding-bottom: 55px;
+    height: 200px;
+    width: 300px;
+    float: left;
+    background-color: orange;
+    font-style: bold;
+}
+div.kotak2 {
+	padding-top: 20px;
+	margin-top: 50px;
+	text-align: center;
+	margin-left: 15%;
+	margin-right: 10%;
+}
+div.img:hover {
+    border: 3px solid orange;
+    background-color: black;
+    color: white;
+    font-style: bold;
+    opacity: 0.8;
+    transition: 1s ease;
+-o-transition: 1s ease;
+-moz-transition: 1s ease;
+-webkit-transition: 1s ease;
+}
+
+div.img img {
+    height: 200px;
+    width: 300px;
+}
+div.img a {
+    color: black;
+    text-decoration: none;
+}
+div.img a:hover {
+    color: white;
+    transition: 0.5s ease;
+-o-transition: 0.5s ease;
+-moz-transition: 0.5s ease;
+-webkit-transition: 0.5s ease;
+}
+div.desc {
+    padding: 8px;
+    text-align: center;
+    font-family: calibri;
+}
+</style>
+
+<div class="des">
+	DATA KATEGORI BARANG
+</div>
+
+	<table id="t00" border="1" cellpadding="3" cellspacing="0" align="center">
+		<tr>
+			<th>ID BARANG</th>
+			<th>KATEGORI</th>
+			<th>BRAND</th>
+			<th>NAMA BARANG</th>
+			<th>FILE BARANG</th>
+			<th>HARGA</th>
+		</tr>
+		{% for brg in data %}
+		<tr>
+			<td>{{ brg.barang_id }}</td>
+			<td>{{ brg.kategori }}</td>
+			<td>{{ brg.brand }}</td>
+			<td>{{ brg.nama_barang }}</td>
+			<td><img src="/static/{{ brg.file_barang }}" height="90"></td>
+			<td>{{ brg.harga }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+<div class="kotak2">
+
+	{% for brg in data %}
+	<div class="img">
+		<a href="#">
+		<img src="/static/{{ brg.file_barang }}" alt="Laptop" >
+		<div class="desc"><b>{{ brg.nama_barang }}<br/>Rp. {{ brg.harga }}</b></div>
+		</a>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
