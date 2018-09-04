@@ -1,5 +1,5 @@
 # Point Of Sales POS Ecommerce
- Django
+ Python Django
 
 Merupakan website POS sederhana yang dibangun dengan framework django
 
